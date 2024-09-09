@@ -1,0 +1,18 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	//perulangan while
+	
+	int i=0;
+	
+	while (i<10){
+		cout << i << endl;
+		i++;
+	}
+
+
+	return 0;
+}

@@ -7,15 +7,15 @@ using namespace std;
 int main()
 {
 	string nama[100],
-		   jurusan[100],
-		   kode[100];
+		   jurusanklh[100],
+		   kodeJ[100];
 	int	npm[100],
-		awal[100],
-		cicilan[100],
+		awalbyr[100],
+		cicilanklh[100],
 		besaran[100],
-		uangKuliah[100],
+		uangklh[100],
 		bayar[100],
-		terbayar[100],
+		sdhbayar[100],
 		sisa[100],
 		i = 0;
 	char entry = 'y';
@@ -31,61 +31,61 @@ int main()
 		cout << "Nama Mahasiswa" << ":"; cin >> nama[i];
 		cout << "NPM" << ":"; cin >> npm[i];
 		ulang:
-		cout << "Kode Jurusan (SI/TI/KA/MI)" << ":"; cin >> kode[i];
+		cout << "kodeJ jurusanklh (SI/TI/KA/MI)" << ":"; cin >> kodeJ[i];
 		
-		if(kode[i] == "SI" || kode[i] == "si")
+		if(kodeJ[i] == "SI" || kodeJ[i] == "si")
 		{
-			jurusan[i] = "Sistem Informasi";
-			awal[i] = 2100000;
-			cicilan[i] = 7;
+			jurusanklh[i] = "Sistem Informasi";
+			awalbyr[i] = 2100000;
+			cicilanklh[i] = 7;
 			besaran[i] = 300000;
-			uangKuliah[i] = awal[i] + (cicilan[i] * besaran[i]);
+			uangklh[i] = awalbyr[i] + (cicilanklh[i] * besaran[i]);
 		}		
-		else if(kode[i] == "TI" || kode[i] == "ti")
+		else if(kodeJ[i] == "TI" || kodeJ[i] == "ti")
 		{
-			jurusan[i] = "Teknik Informatika";
-			awal[i] = 2500000;
-			cicilan[i] = 7;
+			jurusanklh[i] = "Teknik Informatika";
+			awalbyr[i] = 2500000;
+			cicilanklh[i] = 7;
 			besaran[i] = 300000;
-			uangKuliah[i] = awal[i] + (cicilan[i] * besaran[i]);
+			uangklh[i] = awalbyr[i] + (cicilanklh[i] * besaran[i]);
 		}		
-		else if(kode[i] == "KA" || kode[i] == "ka")
+		else if(kodeJ[i] == "KA" || kodeJ[i] == "ka")
 		{
-			jurusan[i] = "Komputer Akuntansi";
-			awal[i] = 1750000;
-			cicilan[i] = 6;
+			jurusanklh[i] = "Komputer Akuntansi";
+			awalbyr[i] = 1750000;
+			cicilanklh[i] = 6;
 			besaran[i] = 200000;
-			uangKuliah[i] = awal[i] + (cicilan[i] * besaran[i]);
+			uangklh[i] = awalbyr[i] + (cicilanklh[i] * besaran[i]);
 		}		
-		else if(kode[i] == "MI" || kode[i] == "mi")
+		else if(kodeJ[i] == "MI" || kodeJ[i] == "mi")
 		{
-			jurusan[i] = "Manajemen Informatika";
-			awal[i] = 1500000;
-			cicilan[i] = 6;
+			jurusanklh[i] = "Manajemen Informatika";
+			awalbyr[i] = 1500000;
+			cicilanklh[i] = 6;
 			besaran[i] = 250000;
-			uangKuliah[i] = awal[i] + (cicilan[i] * besaran[i]);
+			uangklh[i] = awalbyr[i] + (cicilanklh[i] * besaran[i]);
 		}
 		
-		cout << "Jurusan" << ":" << jurusan[i] << endl;
-		cout << "Pembayaran Awal" << ":Rp." << awal[i] << endl;
-		cout << "Jumlah Cicilan" << ":" << cicilan[i] << endl;
-		cout << "Besar Cicilan" << ":Rp." << besaran[i] << endl;
+		cout << "jurusanklh" << ":" << jurusanklh[i] << endl;
+		cout << "Pembayaran awalbyr" << ":Rp." << awalbyr[i] << endl;
+		cout << "Jumlah cicilanklh" << ":" << cicilanklh[i] << endl;
+		cout << "Besar cicilanklh" << ":Rp." << besaran[i] << endl;
 		
 		cout << "Pembayaran Ke-" << ":"; cin >> bayar[i];
 		
-		if(bayar[i] <= cicilan[i])
+		if(bayar[i] <= cicilanklh[i])
 		{
-			terbayar[i] = awal[i] + (bayar[i] * besaran[i]);
-			sisa[i] = uangKuliah[i] - terbayar[i];
+			sdhbayar[i] = awalbyr[i] + (bayar[i] * besaran[i]);
+			sisa[i] = uangklh[i] - sdhbayar[i];
 		}
 		else
 		{
-			terbayar[i] = uangKuliah[i];
+			sdhbayar[i] = uangklh[i];
 			sisa[i] = 0;
 		}
 		
-		cout << "Uang Kuliah" << ":Rp." << uangKuliah[i] << endl;
-		cout << "Uang Kuliah Terbayar" << ":Rp." << terbayar[i] << endl;
+		cout << "Uang Kuliah" << ":Rp." << uangklh[i] << endl;
+		cout << "Uang Kuliah sdhbayar" << ":Rp." << sdhbayar[i] << endl;
 		cout << "Sisa Uang Kuliah" << ":Rp." << sisa[i] << endl;
 		
 		cout << "Masih ingin menghitung [Y/T]" << ":"; cin >> entry;
@@ -97,14 +97,14 @@ int main()
 	
 		
 		cout << "+-----+-------------------------+---------------------+--------------------+--------------------+--------------------+\n";
-		cout << "|" << setw(5) << left << "No." << "|" << setw(25) << "Mahasiswa" << "|" << setw(21) << "Jurusan" << "|" << setw(20) << "Uang Kuliah" << "|";
+		cout << "|" << setw(5) << left << "No." << "|" << setw(25) << "Mahasiswa" << "|" << setw(21) << "jurusanklh" << "|" << setw(20) << "Uang Kuliah" << "|";
 		cout << setw(20) << "Sudah Dibayar" << "|" << setw(20) << "Belum Dibayar" << "|\n";
 		cout << "+-----+-------------------------+---------------------+--------------------+--------------------+--------------------+\n";
 		
 	for(int g=0; g < i; g++)
 	{
-		cout << "|" << setw(5) << left << g+1 << "|" << setw(25) << nama[g] << "|" << setw(21) << jurusan[g] << "|" << setw(20) << uangKuliah[g] << "|";
-		cout << setw(20) << terbayar[g] << "|" << setw(20) << sisa[g] << "|\n";
+		cout << "|" << setw(5) << left << g+1 << "|" << setw(25) << nama[g] << "|" << setw(21) << jurusanklh[g] << "|" << setw(20) << uangklh[g] << "|";
+		cout << setw(20) << sdhbayar[g] << "|" << setw(20) << sisa[g] << "|\n";
 	}
 	
 		cout << "+-----+-------------------------+---------------------+--------------------+--------------------+--------------------+\n";
